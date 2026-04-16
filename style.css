@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #160105;
+    --dark-color: #0f172a;   
+    --light-bg: #f1f5f9;     
+    --white: #ffffff;        
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* 1. Suavidade Global e Mudança de Tema */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Transições para elementos interativos */
+header, footer, .card-projeto, form, button, input, textarea {
+    transition: all 0.3s ease;
+}
+
+header {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;       
+    list-style: none;    
+    gap: 20px;           
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #3b82f6;
+}
+
+/* 3. Animações de Entrada (Fade-In) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Atrasos para as seções aparecerem em ordem */
+#sobre { animation-delay: 0.1s; }
+#projetos { animation-delay: 0.3s; }
+#contato { animation-delay: 0.5s; }
+
+#sobre {
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+}
+
+#sobre img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;  
+    margin-bottom: 20px;
+    border: 5px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+h2 {
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+.projetos-container {
+    display: flex;            
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 25px;                
+    margin-top: 30px;
+}
+
+/* 2. Efeitos de Hover nos Cards */
+.card-projeto {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);    
+    flex: 1 1 300px;    
+    max-width: 400px;
+    border: 1px solid transparent;
+}
+
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    border: 1px solid var(--primary-color);
+}
+
+.card-projeto a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    border: 1px solid #2563eb;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.card-projeto a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Centralização da Seção de Contato */
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contato h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;      
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;        
+    display: flex;            
+    flex-direction: column;   
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;       
+}
+
+form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    background-color: #f8fafc;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+/* 4. Ajuste no Botão de Enviar */
+form button {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    filter: brightness(1.2);
+}
+
+form button:active {
+    transform: scale(0.96);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--dark-color);
+    color: white;
+    margin-top: 50px;
+}
+
+#btn-tema {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Configurações do Tema Escuro */
+body.dark-theme {
+    --light-bg: #0f172a;   
+    --dark-color: #f1f5f9;  
+    --white: #1e293b;      
+    --primary-color: #3b82f6; 
+}
+
+body.dark-theme form input, 
+body.dark-theme form textarea {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    .card-projeto {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Marcos José</title>    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button id="btn-tema">Escuro</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <img src="perfil.png" alt="Foto de Marcos José">
+            <p>Oi, me chamo Marcos José, sou aluno do curso Tecnologia em Sistemas para Internet (EAD-UAPI) do Polo de Cocal - Piauí.</p>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projetos-container"></div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form action="#" method="post" id="meu-formulario">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>                
+                </div>
+                <div class="campo">
+                    <label for="msg">Mensagem:</label>
+                    <textarea id="msg" required></textarea>
+                </div>
+                
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido por Marcos José</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
